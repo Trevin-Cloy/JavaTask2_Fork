@@ -21,7 +21,10 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build Project with Gradle
-      run: ./gradlew build
+      run: ./gradlew build --stacktrace
+
+    - name: List built JAR files
+      run: ls -l build/libs
 
     - name: Build and Push Docker Image to Docker Hub
       uses: mr-smithers-excellent/docker-build-push@v4
